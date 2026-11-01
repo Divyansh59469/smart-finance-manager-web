@@ -6,7 +6,7 @@ import { useFinance } from "../context/FinanceContext";
 export default function Budgets() {
   const {
     budgets,
-    transactions,
+    spendingByCategory,
     addBudget,
     deleteBudget,
   } = useFinance();
@@ -47,17 +47,7 @@ export default function Budgets() {
   }
 
   function getSpent(category) {
-    return transactions
-      .filter(
-        (transaction) =>
-          transaction.type === "Expense" &&
-          transaction.category === category
-      )
-      .reduce(
-        (total, transaction) =>
-          total + transaction.amount,
-        0
-      );
+    return spendingByCategory[category] ?? 0;
   }
 
   const totalBudget = budgets.reduce(

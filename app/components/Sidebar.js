@@ -22,6 +22,14 @@ export default function Sidebar() {
         <Link href="/transactions">Transactions</Link>
         <Link href="/budgets">Budgets</Link>
         <Link href="/savings">Savings Goals</Link>
+        <Link href="/reports">Reports</Link>
+        <a
+          href="http://localhost:8080/swagger-ui.html"
+          target="_blank"
+          rel="noreferrer"
+        >
+          API Docs
+        </a>
       </nav>
 
       <div className="sidebar-user">

@@ -4,29 +4,14 @@ import { useFinance } from "../context/FinanceContext";
 
 export default function Reports() {
   const {
-    transactions,
+    spendingByCategory,
     totalIncome,
     totalExpenses,
     balance,
   } = useFinance();
 
-  const expenseTransactions = transactions.filter(
-    (transaction) => transaction.type === "Expense"
-  );
-
-  const categoryExpenses = {};
-
-  expenseTransactions.forEach((transaction) => {
-    if (!categoryExpenses[transaction.category]) {
-      categoryExpenses[transaction.category] = 0;
-    }
-
-    categoryExpenses[transaction.category] +=
-      transaction.amount;
-  });
-
   const sortedCategories = Object.entries(
-    categoryExpenses
+    spendingByCategory
   ).sort((a, b) => b[1] - a[1]);
 
   const highestExpense =

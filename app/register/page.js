@@ -24,8 +24,16 @@ export default function Register() {
       return;
     }
 
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters");
+    // Same rule as the backend: 8-72 characters with at least one letter and one digit
+    if (
+      password.length < 8 ||
+      password.length > 72 ||
+      !/[A-Za-z]/.test(password) ||
+      !/\d/.test(password)
+    ) {
+      setError(
+        "Password must be 8-72 characters and include a letter and a number"
+      );
       return;
     }
 
@@ -83,7 +91,7 @@ export default function Register() {
             <label>Password</label>
             <input
               type="password"
-              placeholder="Create a password"
+              placeholder="8+ characters, letters and numbers"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

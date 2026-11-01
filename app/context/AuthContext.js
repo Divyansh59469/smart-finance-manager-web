@@ -57,7 +57,7 @@ export function AuthProvider({ children }) {
       }
 
       if (response.status === 400) {
-        return "Please check your details. The password needs at least 6 characters.";
+        return "Please check your details. The password needs 8-72 characters with a letter and a number.";
       }
 
       return "Something went wrong. Please try again.";

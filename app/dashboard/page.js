@@ -4,7 +4,7 @@ import { useFinance } from "../context/FinanceContext";
 
 export default function Dashboard() {
   const {
-    transactions,
+    recentTransactions,
     totalIncome,
     totalExpenses,
     balance,
@@ -44,19 +44,16 @@ export default function Dashboard() {
       <section className="transaction-card">
         <h2>Recent Transactions</h2>
 
-        {transactions.length === 0 ? (
+        {recentTransactions.length === 0 ? (
           <p>No transactions yet.</p>
         ) : (
           <ul>
-            {transactions
-              .slice(-5)
-              .reverse()
-              .map((transaction) => (
+            {recentTransactions.map((transaction) => (
                 <li key={transaction.id}>
                   {transaction.description} - ₹
                   {transaction.amount.toLocaleString("en-IN")}
                 </li>
-              ))}
+            ))}
           </ul>
         )}
       </section>

@@ -109,6 +109,10 @@ aside a[href="/reports"]::before {
   content: "📈";
 }
 
+aside a[href$="swagger-ui.html"]::before {
+  content: "📘";
+}
+
 aside a:hover {
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
@@ -456,6 +460,45 @@ td.income {
 td.expense {
   color: var(--red);
   font-weight: 700;
+}
+
+/* ---------- Sorting & pagination ---------- */
+
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+th.sortable:hover {
+  color: #334155;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.pagination select {
+  width: auto;
+  padding: 6px 10px;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
 td.income::before,
