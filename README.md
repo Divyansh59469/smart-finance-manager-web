@@ -1,6 +1,8 @@
+![CI](https://github.com/Divyansh59469/smart-finance-manager-web/actions/workflows/ci.yml/badge.svg)
+
 # Smart Finance Manager Web
 
-Next.js frontend for the [Smart Finance Manager API](../smart-finance-manager-api). Register, log in, track transactions, set budgets and savings goals, and read spending reports.
+Next.js frontend for the [Smart Finance Manager API](https://github.com/Divyansh59469/smart-finance-manager-api). Register, log in, track transactions, set budgets and savings goals, and read spending reports.
 
 ## Features
 
